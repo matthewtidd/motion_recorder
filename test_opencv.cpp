@@ -155,9 +155,9 @@ int main( int argc, char** argv )
 				fflush(outputFile);
 				diff = time(NULL);
 				printf("%.f second passed \n", difftime(diff, timer));
-				char buf[80];
-				strftime(buf, 80, "%Y%m%d%H%M%S", time_ptr);
-				printf("%s timer\n", buf);
+				//char buf[80];
+				//strftime(buf, 80, "%Y%m%d%H%M%S", time_ptr);
+				//printf("%s timer\n", buf);
 				int time_diff = difftime(diff, timer);
 
 				// trigger for stopping recording
