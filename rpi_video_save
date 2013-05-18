@@ -1,0 +1,4 @@
+#!/bin/bash
+
+VPORT=5000
+gst-launch-0.10 -v udpsrc port=$VPORT caps='application/x-rtp, media=(string)video, clock-rate=(int)90000, encoding-name=(string)JPEG, payload=(int)96, ssrc=(uint)3550447310, clock-base=(uint)3425971710, seqnum-base=(uint)9917' ! rtpjpegdepay ! jpegdec ! videoscale ! 'video/x-raw-yuv, width=320, height=240' ! queue ! videorate ! 'video/x-raw-yuv,framerate=5/1' ! queue ! ffmpegcolorspace ! 'video/x-raw-yuv,format=(fourcc)I420' ! ffenc_mpeg4 ! queue ! filesink location=/home/matt/programming/camera_motion/test_video.avi

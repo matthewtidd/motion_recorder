@@ -1,0 +1,4 @@
+#!/bin/bash
+
+./rpi_video &
+./test_opencv

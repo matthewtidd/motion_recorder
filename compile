@@ -1,0 +1,3 @@
+#!/bin/bash
+
+gcc -ggdb `pkg-config --cflags --libs opencv` test_opencv.cpp -o test_opencv
